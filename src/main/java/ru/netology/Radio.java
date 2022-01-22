@@ -9,12 +9,7 @@ public class Radio {
     private int maxVolume = 100;
     private int currentVolume = 100;
 
-//    public Radio(int maxRadioStation, int currentRadioStation, int maxVolume, int currentVolume) {
-//        this.maxRadioStation = maxRadioStation;
-//        this.currentRadioStation = currentRadioStation;
-//        this.maxVolume = maxVolume;
-//        this.currentVolume = currentVolume;
-//    }
+
 
 
     // С одним параметром
