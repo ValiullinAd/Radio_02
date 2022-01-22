@@ -5,17 +5,23 @@ public class Radio {
     private int radioStation = 14;
 
     private int maxRadioStation = radioStation - 1;
-    private int currentRadioStation = maxRadioStation / 2;
+    private int currentRadioStation = 0;
     private int maxVolume = 100;
     private int currentVolume = 100;
 
-    public Radio(int maxRadioStation, int currentRadioStation, int maxVolume, int currentVolume) {
-        this.maxRadioStation = maxRadioStation;
-        this.currentRadioStation = currentRadioStation;
-        this.maxVolume = maxVolume;
-        this.currentVolume = currentVolume;
-    }
+//    public Radio(int maxRadioStation, int currentRadioStation, int maxVolume, int currentVolume) {
+//        this.maxRadioStation = maxRadioStation;
+//        this.currentRadioStation = currentRadioStation;
+//        this.maxVolume = maxVolume;
+//        this.currentVolume = currentVolume;
+//    }
 
+
+    // С одним параметром
+    public Radio(int radioStation) {
+        this.radioStation = radioStation;
+    }
+    // Без параметров
     public Radio() {
     }
 
@@ -55,7 +61,7 @@ public class Radio {
 
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume < 0) {
-            return;
+            currentVolume = 0;
         }
         if (currentVolume == 100) {
             return;
