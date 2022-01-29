@@ -134,10 +134,20 @@ class RadioTest {
 //        assertEquals(100, radio.getCurrentVolume());
 //    }
     @Test
-    public void testCurrentStationZero() {
-        Radio radio = new Radio();
+    public void testCurrentStationUpMax() {
+        Radio radio = new Radio(20);
+        radio.setCurrentRadioStation(20);
+        //radio.previousRadioStation();
+        radio.nextRadioStation();
+
+        assertEquals(0, radio.getCurrentRadioStation());
+    }
+    @Test
+    public void testCurrentStationUpOne() {
+        Radio radio = new Radio(20);
         radio.setCurrentRadioStation(2);
         radio.previousRadioStation();
+        //radio.nextRadioStation();
 
         assertEquals(1, radio.getCurrentRadioStation());
     }
