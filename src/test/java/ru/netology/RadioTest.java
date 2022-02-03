@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-    // Radio radio = new Radio();
+
 
     @Test
     public void shouldUseConstructor() {
@@ -17,15 +17,29 @@ class RadioTest {
 
 
     }
+
+    @Test
+    public void newMaxRadioStation() {
+        Radio radio = new Radio(20);
+
+        assertEquals(19, radio.getMaxRadioStation());
+    }
+    @Test
+    public void newMaxRadioStationV2() {
+        Radio radio = new Radio(50);
+
+        assertEquals(49, radio.getMaxRadioStation());
+    }
+
     @Test
     public void nextRadioStation() {
         Radio radio = new Radio();
         radio.nextRadioStation();
 
-
         assertEquals(1, radio.getCurrentRadioStation());
 
     }
+
     @Test
     public void testRadioStationDownZero() {
         Radio radio = new Radio();
@@ -34,6 +48,7 @@ class RadioTest {
         assertEquals(13, radio.getCurrentRadioStation());
 
     }
+
     @Test
     public void testRadioStationUpMax() {
         Radio radio = new Radio();
@@ -43,6 +58,7 @@ class RadioTest {
         assertEquals(1, radio.getCurrentRadioStation());
 
     }
+
     @Test
     public void prevRadioStation() {
         Radio radio = new Radio();
@@ -51,7 +67,8 @@ class RadioTest {
         assertEquals(13, radio.getCurrentRadioStation());
 
     }
-//    @Test
+
+    //    @Test
 //    public void shouldUseConstructorVolume() {
 //        Radio radio =
 //                new Radio(20,7,50,20);
@@ -67,6 +84,7 @@ class RadioTest {
         assertEquals(100, radio.getCurrentVolume());
 
     }
+
     @Test
     public void prevVolume() {
         Radio radio = new Radio();
@@ -97,6 +115,7 @@ class RadioTest {
 
 
     }
+
     @Test
     public void testPreviousVolume() {
         Radio radio = new Radio();
@@ -118,6 +137,7 @@ class RadioTest {
 
 
     }
+
     @Test
     public void testCurrentVolumeValidDownZero() {
         Radio radio = new Radio();
@@ -125,7 +145,8 @@ class RadioTest {
 
         assertEquals(0, radio.getCurrentVolume());
     }
-//
+
+    //
 //    @Test
 //    public void testCurrentVolumeValidUpHundr() {
 //        Radio radio = new Radio(20,7,100,100);
@@ -142,6 +163,7 @@ class RadioTest {
 
         assertEquals(0, radio.getCurrentRadioStation());
     }
+
     @Test
     public void testCurrentStationUpOne() {
         Radio radio = new Radio(20);
@@ -151,6 +173,7 @@ class RadioTest {
 
         assertEquals(1, radio.getCurrentRadioStation());
     }
+
     @Test
     public void testCurrentStation() {
         Radio radio = new Radio();
@@ -159,13 +182,14 @@ class RadioTest {
 
         assertEquals(0, radio.getCurrentRadioStation());
     }
+
     @Test
     public void testCurrentStationDownZero() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(-1);
         radio.previousRadioStation();
 
-        assertEquals(13 , radio.getCurrentRadioStation());
+        assertEquals(13, radio.getCurrentRadioStation());
     }
 
 
